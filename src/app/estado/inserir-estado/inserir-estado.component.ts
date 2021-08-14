@@ -17,7 +17,7 @@ export class InserirEstadoComponent {
     private estadoService: EstadoService,
     public router: Router
   ) {
-    this.estado = new Estado(0);
+    this.estado = new Estado(0, '', '');
   }
 
   inserir(): void {

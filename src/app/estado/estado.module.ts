@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
 import { ModalEstadoComponent } from './modal-estado/modal-estado.component';
+import { SharedModule } from '../shared';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ModalEstadoComponent } from './modal-estado/modal-estado.component';
     CommonModule,
     FormsModule,
     NgxMaskModule.forRoot(),
-    RouterModule
+    RouterModule,
+    SharedModule
   ]
 })
 export class EstadoModule { }
