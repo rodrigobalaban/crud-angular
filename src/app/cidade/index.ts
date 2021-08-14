@@ -3,3 +3,4 @@ export * from './services'
 export * from './listar-cidade';
 export * from './inserir-cidade';
 export * from './editar-cidade';
+export * from './modal-cidade';
