@@ -10,12 +10,14 @@ import { InserirEnderecoComponent } from './inserir-endereco';
 import { ListarEnderecoComponent } from './listar-endereco';
 import { SharedModule } from '../shared';
 import { NgxMaskModule } from 'ngx-mask';
+import { ModalEnderecoComponent } from './modal-endereco/modal-endereco.component';
 
 @NgModule({
   declarations: [
     ListarEnderecoComponent,
     InserirEnderecoComponent,
     EditarEnderecoComponent,
+    ModalEnderecoComponent,
   ],
   imports: [
     CommonModule,
