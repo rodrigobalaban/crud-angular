@@ -1,29 +1,31 @@
 <h1>Pessoas</h1>
-<table class="table table-striped table-bordered table-hover">
-    <tbody>
+<table class="table table-striped table-hover align-middle">
+    <thead>
         <tr>
             <th>Nome</th>
             <th>Idade</th>
             <th>Data de Nascimento</th>
-            <th class="text-center">
+            <th class="text-end">
                 <a href="#" title="Novo" alt="Novo" class="btn btn-primary" [routerLink]="['/pessoas/novo']">
                     <i class="fa fa-plus" aria-hidden="true"></i> Novo
                 </a>
             </th>
         </tr>
+    </thead>
+    <tbody>        
         <tr *ngFor="let pessoa of pessoas">
             <td>{{ pessoa.nome }}</td>
             <td>{{ pessoa.idade }}</td>
             <td>{{ pessoa.dataNascimento | mask: 'd0/M0/0000' }}</td>
-            <td class="text-center" style="width: 300px">
-                <button type="button" class="btn btn-xs btn-info" (click)="abrirModalPessoa(pessoa)">
+            <td class="text-end">
+                <button type="button" class="btn btn-sm btn-primary me-2" (click)="abrirModalPessoa(pessoa)">
                     <i class="fa fa-eye" aria-hidden="true"></i> Ver
                 </button>
-                <a href="#" title="Editar" alt="Editar" class="btn btn-secondary"
+                <a href="#" title="Editar" alt="Editar" class="btn btn-sm btn-secondary me-2"
                     [routerLink]="['/pessoas/editar', pessoa.id]">
                     <i class="fa fa-edit" aria-hidden="true"></i> Editar
                 </a>
-                <a href="#" title="Remover" alt="Remover" class="btn btn-danger" (click)="remover($event, pessoa)">
+                <a href="#" title="Remover" alt="Remover" class="btn btn-sm btn-danger" (click)="remover($event, pessoa)">
                     <i class="fa fa-times" aria-hidden="true"></i> Remover
                 </a>
             </td>
