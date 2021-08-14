@@ -5,6 +5,7 @@ import { InserirEstadoComponent } from './inserir-estado';
 import { ListarEstadoComponent } from './listar-estado';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
+    NgxMaskModule.forRoot(),
     RouterModule
   ]
 })
