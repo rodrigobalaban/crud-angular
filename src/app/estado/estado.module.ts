@@ -6,12 +6,14 @@ import { ListarEstadoComponent } from './listar-estado';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
+import { ModalEstadoComponent } from './modal-estado/modal-estado.component';
 
 @NgModule({
   declarations: [
     ListarEstadoComponent,
     InserirEstadoComponent,
-    EditarEstadoComponent
+    EditarEstadoComponent,
+    ModalEstadoComponent
   ],
   imports: [
     CommonModule,

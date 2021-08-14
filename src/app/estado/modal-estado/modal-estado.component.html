@@ -1,0 +1,13 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modalLabel">Estado</h4>
+    <button type="button" class="btn-close" aria-label="Fechar" (click)="activeModal.dismiss()"></button>
+</div>
+<div class="modal-body text-center">
+    <div>
+        <p>Nome: {{ estado.nome }} </p>
+        <p>Sigla: {{ estado.sigla }}</p>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="activeModal.close()">Fechar</button>
+</div>
