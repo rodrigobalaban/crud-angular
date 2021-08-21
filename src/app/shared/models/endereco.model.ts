@@ -1,3 +1,5 @@
+import { Cidade } from "./cidade.model";
+
 export class Endereco {
   constructor(
     public id: number,
@@ -7,8 +9,7 @@ export class Endereco {
     public complemento?: string,
     public bairro?: string,
     public cep?: string,
-    public cidade?: string,
-    public estado?: string,
+    public cidade?: Cidade,
     public residencial?: boolean
   ) {}
 }

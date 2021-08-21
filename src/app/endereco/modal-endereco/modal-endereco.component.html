@@ -8,8 +8,8 @@
         <p>Número: {{ endereco.numero }}</p>
         <p>Complemento: {{ endereco.complemento }}</p>
         <p>Bairro: {{ endereco.bairro }}</p>
-        <p>Cidade: {{ endereco.cidade }}</p>
-        <p>Estado: {{ endereco.estado }}</p>
+        <p>Cidade: {{ endereco.cidade?.nome }}</p>
+        <p>Estado: {{ endereco.cidade?.estado?.sigla }}</p>
     </div>
 </div>
 <div class="modal-footer">

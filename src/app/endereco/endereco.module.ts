@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 import { EnderecoService } from './services';
 
@@ -23,6 +24,7 @@ import { ModalEnderecoComponent } from './modal-endereco/modal-endereco.componen
     CommonModule,
     FormsModule,
     NgxMaskModule.forRoot(),
+    NgSelectModule,
     RouterModule,
     SharedModule,
   ],
