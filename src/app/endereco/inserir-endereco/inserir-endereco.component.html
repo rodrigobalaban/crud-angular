@@ -2,7 +2,31 @@
 <div class="well">
     <form #formEndereco="ngForm">
         <div class="mb-3">
-            <label for="rua">Rua:</label>
+            <label>Tipo Endereço:</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipo" id="rua" [(ngModel)]="endereco.tipo"
+                    #tipo="ngModel" value="Rua">
+                <label class="form-check-label" for="rua">
+                    Rua
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipo" id="avenida" [(ngModel)]="endereco.tipo"
+                    #tipo="ngModel" value="Avenida">
+                <label class="form-check-label" for="avenida">
+                    Avenida
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipo" id="travessa" [(ngModel)]="endereco.tipo"
+                    #tipo="ngModel" value="Travessa">
+                <label class="form-check-label" for="travessa">
+                    Travessa
+                </label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="rua">Logradouro:</label>
             <input type="text" #rua="ngModel" class="form-control" id="rua" name="rua" minlength="2"
                 [(ngModel)]="endereco.rua" required />
             <div *ngIf="rua.errors && (rua.dirty || rua.touched)" class="alert alert-danger">

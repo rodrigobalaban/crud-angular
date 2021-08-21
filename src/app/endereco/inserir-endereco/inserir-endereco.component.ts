@@ -17,7 +17,7 @@ export class InserirEnderecoComponent {
     private enderecoService: EnderecoService,
     public router: Router
   ) {
-    this.endereco = new Endereco(0, '', 0);
+    this.endereco = new Endereco(0, 'Rua', '', 0);
   }
 
   inserir(): void {

@@ -1,6 +1,7 @@
 export class Endereco {
   constructor(
     public id: number,
+    public tipo: string,
     public rua?: string,
     public numero?: number,
     public complemento?: string,
