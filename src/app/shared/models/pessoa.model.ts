@@ -4,6 +4,7 @@ export class Pessoa {
     public nome: string,
     public idade: number,
     public dataNascimento: string,
-    public fumante: boolean
+    public fumante: boolean,
+    public motorista: string
   ) {}
 }

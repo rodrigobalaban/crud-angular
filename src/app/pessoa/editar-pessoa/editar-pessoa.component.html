@@ -39,6 +39,37 @@
                 Fumante?
             </label>
         </div>
+        <div class="mb-3">
+            <label>Carteira de Motorista:</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipo" id="nao" [(ngModel)]="pessoa.motorista"
+                    #tipo="ngModel" value="Não">
+                <label class="form-check-label" for="nao">
+                    Não Possui
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipo" id="tipo-a" [(ngModel)]="pessoa.motorista"
+                    #tipo="ngModel" value="A">
+                <label class="form-check-label" for="tipo-a">
+                    A
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipo" id="tipo-b" [(ngModel)]="pessoa.motorista"
+                    #tipo="ngModel" value="B">
+                <label class="form-check-label" for="tipo-b">
+                    B
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipo" id="tipo-ab" [(ngModel)]="pessoa.motorista"
+                    #tipo="ngModel" value="AB">
+                <label class="form-check-label" for="tipo-ab">
+                    AB
+                </label>
+            </div>
+        </div>
         <button type="button" class="btn btn-primary me-2" (click)="atualizar()" [disabled]="!formPessoa.form.valid">
             <i class="fa fa-save" aria-hidden="true"></i> Atualizar
         </button>
