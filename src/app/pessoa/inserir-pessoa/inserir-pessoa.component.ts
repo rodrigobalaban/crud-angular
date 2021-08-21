@@ -16,7 +16,7 @@ export class InserirPessoaComponent implements OnInit {
   constructor(private pessoaService: PessoaService, private router: Router) {}
 
   ngOnInit(): void {
-    this.pessoa = new Pessoa(0, '', 0, '');
+    this.pessoa = new Pessoa(0, '', 0, '', false);
   }
 
   inserir(): void {
