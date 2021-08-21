@@ -5,6 +5,7 @@
             <th>Tipo</th>
             <th>Logradouro</th>
             <th>Cidade</th>
+            <th>Residencial/Comercial</th>
             <th class="text-end">
                 <a href="#" title="Novo" alt="Novo" class="btn btn-primary" [routerLink]="['/enderecos/novo']">
                     <i class="fa fa-plus" aria-hidden="true"></i> Novo
@@ -12,11 +13,12 @@
             </th>
         </tr>
     </thead>
-    <tbody>       
+    <tbody>
         <tr *ngFor="let endereco of enderecos">
             <td>{{ endereco.tipo }}</td>
             <td>{{ endereco.rua }}, {{ endereco.numero }}</td>
             <td>{{ endereco.cidade }}</td>
+            <td>{{ endereco.residencial ? 'Residencial' : 'Comercial' }} </td>
             <td class="text-end">
                 <button type="button" class="btn btn-sm btn-primary me-2" (click)="abrirModalEndereco(endereco)">
                     <i class="fa fa-eye" aria-hidden="true"></i> Ver
@@ -25,7 +27,8 @@
                     [routerLink]="['/enderecos/editar', endereco.id]">
                     <i class="fa fa-edit" aria-hidden="true"></i> Editar
                 </a>
-                <a href="#" title="Remover" alt="Remover" class="btn btn-sm btn-danger" (click)="remover($event, endereco)">
+                <a href="#" title="Remover" alt="Remover" class="btn btn-sm btn-danger"
+                    (click)="remover($event, endereco)">
                     <i class="fa fa-times" aria-hidden="true"></i> Remover
                 </a>
             </td>
