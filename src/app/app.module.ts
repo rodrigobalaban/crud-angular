@@ -8,6 +8,7 @@ import { SharedModule } from './shared';
 import { AppComponent } from './app.component';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { EnderecoModule } from './endereco';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { EnderecoModule } from './endereco';
     BrowserModule,
     AppRoutingModule,
     NgbDropdownModule,
+    NgSelectModule,
     EnderecoModule,
     PessoaModule,
     SharedModule

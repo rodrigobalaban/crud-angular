@@ -14,7 +14,7 @@
     <tbody>        
         <tr *ngFor="let cidade of cidades">
             <td>{{ cidade.nome }}</td>
-            <td>{{ cidade.estado }}</td>
+            <td>{{ cidade.estado?.sigla }}</td>
             <td class="text-end">
                 <button type="button" class="btn btn-sm btn-primary me-2" (click)="abrirModalCidade(cidade)">
                     <i class="fa fa-eye" aria-hidden="true"></i> Ver

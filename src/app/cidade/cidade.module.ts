@@ -7,6 +7,7 @@ import { CidadeService } from './services';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ModalCidadeComponent } from './modal-cidade/modal-cidade.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ModalCidadeComponent } from './modal-cidade/modal-cidade.component';
   imports: [
     CommonModule,
     FormsModule,
+    NgSelectModule,
     RouterModule
   ],
   providers: [CidadeService]
