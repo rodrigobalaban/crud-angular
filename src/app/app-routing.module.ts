@@ -22,6 +22,7 @@ import {
   InserirPessoaComponent,
   ListarPessoaComponent,
 } from './pessoa';
+import { UsuarioRoutes } from './usuario';
 
 const routes: Routes = [
   {
@@ -114,6 +115,7 @@ const routes: Routes = [
   },
 
   ...LoginRoutes,
+  ...UsuarioRoutes
 ];
 
 @NgModule({

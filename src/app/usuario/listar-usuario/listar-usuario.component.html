@@ -1,0 +1,35 @@
+<h1>Usuários</h1>
+<table class="table table-striped table-hover align-middle">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Login</th>
+            <th>Perfil</th>
+            <th class="text-end">
+                <a href="#" title="Novo" alt="Novo" class="btn btn-primary" [routerLink]="['/usuarios/novo']">
+                    <i class="fa fa-plus" aria-hidden="true"></i> Novo
+                </a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>        
+        <tr *ngFor="let usuario of usuarios">
+            <td>{{ usuario.nome }}</td>
+            <td>{{ usuario.login }}</td>
+            <td>{{ usuario.perfil }}</td>
+            <td class="text-end">
+                <button type="button" class="btn btn-sm btn-primary me-2" (click)="abrirModalUsuario(usuario)">
+                    <i class="fa fa-eye" aria-hidden="true"></i> Ver
+                </button>
+                <a href="#" title="Editar" alt="Editar" class="btn btn-sm btn-secondary me-2"
+                    [routerLink]="['/usuarios/editar', usuario.id]">
+                    <i class="fa fa-edit" aria-hidden="true"></i> Editar
+                </a>
+                <a href="#" title="Remover" alt="Remover" class="btn btn-sm btn-danger" (click)="remover($event, usuario)">
+                    <i class="fa fa-times" aria-hidden="true"></i> Remover
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p *ngIf="usuarios.length < 1">Nenhuma usuário cadastrado.</p>

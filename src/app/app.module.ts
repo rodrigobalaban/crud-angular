@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgSelectModule } from '@ng-select/ng-select';
@@ -22,6 +23,7 @@ import { HomeComponent } from './home';
     AuthModule,
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     NgbDropdownModule,
     NgSelectModule,
     EnderecoModule,

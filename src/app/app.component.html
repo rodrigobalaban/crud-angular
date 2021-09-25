@@ -19,9 +19,13 @@
           <a class="nav-link" [routerLink]="['cidades']">Cidades</a>
         </li>
         <li *ngIf="
-            usuarioLogado?.perfil === 'ADMIN' || usuarioLogado?.perfil === 'FUNC'
+            usuarioLogado?.perfil === 'ADMIN' ||
+            usuarioLogado?.perfil === 'FUNC'
           " class="nav-item">
           <a class="nav-link" [routerLink]="['estados']">Estados</a>
+        </li>
+        <li *ngIf="usuarioLogado?.perfil === 'ADMIN'" class="nav-item">
+          <a class="nav-link" [routerLink]="['usuarios']">Usuários</a>
         </li>
         <li class="nav-item" ngbDropdown>
           <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown1" role="button">
@@ -38,13 +42,16 @@
                 usuarioLogado?.perfil === 'ADMIN' ||
                 usuarioLogado?.perfil === 'FUNC'
               " ngbDropdownItem [routerLink]="['/estados']">Estados</a>
+            <a *ngIf="usuarioLogado?.perfil === 'ADMIN'" ngbDropdownItem [routerLink]="['/usuarios']">Usuários</a>
           </div>
         </li>
       </ul>
     </div>
     <ul *ngIf="usuarioLogado" class="navbar-nav ml-auto">
       <li class="nav-item">
-        <button type="button" class="btn btn-light" (click)="logout()">Logout</button>
+        <button type="button" class="btn btn-light" (click)="logout()">
+          Logout
+        </button>
       </li>
       <li class="nav-item">
         <p class="navbar-text mb-0">
