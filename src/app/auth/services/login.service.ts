@@ -1,5 +1,6 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Login, Usuario } from '../../shared';
 
 const LS_CHAVE = 'usuarioLogado';
@@ -8,7 +9,14 @@ const LS_CHAVE = 'usuarioLogado';
   providedIn: 'root',
 })
 export class LoginService {
-  constructor() {}
+  BASE_URL = 'http://localhost:8080/login/';
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
+  
+  constructor(private httpClient: HttpClient) {}
 
   public get usuarioLogado(): Usuario | null {
     let usu = localStorage[LS_CHAVE];
@@ -20,37 +28,7 @@ export class LoginService {
   }
 
   login(login: Login): Observable<Usuario | null> {
-    let usuario = new Usuario(
-      1,
-      'Rodrigo-Func',
-      login.login,
-      login.senha,
-      'FUNC'
-    );
-
-    if (login.login === login.senha) {
-      if (login.login === 'admin') {
-        usuario = new Usuario(
-          1,
-          'Rodrigo-Admin',
-          login.login,
-          login.senha,
-          'ADMIN'
-        );
-      } else if (login.login === 'gerente') {
-        usuario = new Usuario(
-          1,
-          'Rodrigo-Gerente',
-          login.login,
-          login.senha,
-          'GERENTE'
-        );
-      }
-
-      return of(usuario);
-    } else {
-      return of(null);
-    }
+    return this.httpClient.post<Usuario>(this.BASE_URL, login, this.httpOptions);
   }
 
   logout() {
