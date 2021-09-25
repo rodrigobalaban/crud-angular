@@ -1,6 +1,6 @@
 <h1>Editar Usuário</h1>
 <div class="well">
-    <form #formUsuario="ngForm">
+    <form *ngIf="usuario" #formUsuario="ngForm">
         <div class="mb-3">
             <label for="nome">Nome:</label>
             <input type="text" #nome="ngModel" class="form-control" id="nome" name="nome" minlength="2"
