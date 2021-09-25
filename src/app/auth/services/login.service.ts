@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Login, Usuario } from '../../shared';
 
 const LS_CHAVE = 'usuarioLogado';
@@ -9,13 +10,13 @@ const LS_CHAVE = 'usuarioLogado';
   providedIn: 'root',
 })
 export class LoginService {
-  BASE_URL = 'http://localhost:8080/login/';
+  BASE_URL = environment.LOGIN_BASE_URL + '/login';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     }),
   };
-  
+
   constructor(private httpClient: HttpClient) {}
 
   public get usuarioLogado(): Usuario | null {
@@ -28,7 +29,11 @@ export class LoginService {
   }
 
   login(login: Login): Observable<Usuario | null> {
-    return this.httpClient.post<Usuario>(this.BASE_URL, login, this.httpOptions);
+    return this.httpClient.post<Usuario>(
+      this.BASE_URL,
+      login,
+      this.httpOptions
+    );
   }
 
   logout() {
